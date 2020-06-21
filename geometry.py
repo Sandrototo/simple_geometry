@@ -7,9 +7,6 @@ print("""
 ──────────────────────────────────────────█
 """)
 
-def separ(sep, sep_len):
-    return sep * sep_len
-
 while True:
     print()
     menu = (input("""Выберите Действие:
@@ -52,7 +49,6 @@ while True:
                     s = a * b
                     print()
                     print(f"Площадь прямоугольника со сторонами {a} и {b} равна {s}")
-                    print(separ("-", 100))
                     menu_1 = (input("""Выберите действие:
              
     1 - Продолжить; 
