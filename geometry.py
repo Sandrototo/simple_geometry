@@ -7,6 +7,11 @@ print("""
 ──────────────────────────────────────────█
 """)
 
+
+def line(sep, sep_len):
+    return sep * sep_len
+
+
 while True:
     print()
     menu = (input("""Выберите Действие:
@@ -47,8 +52,9 @@ while True:
                     a = float(input("Введите длину: "))
                     b = float(input("Введите ширину: "))
                     s = a * b
-                    print()
+                    print(line("-", 100))
                     print(f"Площадь прямоугольника со сторонами {a} и {b} равна {s}")
+                    print(line("-", 100))
                     menu_1 = (input("""Выберите действие:
              
     1 - Продолжить; 
@@ -73,8 +79,9 @@ while True:
                     angle = angle / 180
                     x = (math.sin(angle))
                     s = d ** 2 * x / 2
+                    print(line("-", 100))
                     print("Площадь прямоугольника с диагональю {} и углом {} равна {}".format(d, s_in, s))
-                    print()
+                    print(line("-", 100))
                     menu_1 = (input("""Выберите действие: 
                 1 - Продолжить;
                 99 - Меню прямоугольника;
@@ -109,9 +116,10 @@ while True:
         Введите радиус: """))
                     print()
                     s = math.pi * r ** 2
+                    print(line("-", 100))
                     print("""
 Площадь круга с радиусом {} равна {}""".format(r, s))
-                    print()
+                    print(line("-", 100))
                     menu_1 = (input("""
     1 - Продолжить; 
     99- Меню окружности;
@@ -131,9 +139,9 @@ while True:
                     print()
                     d = float(input("""Введите диаметр: """))
                     s = d ** 2 * math.pi / 4
-                    print()
+                    print(line("-", 100))
                     print("Площадь круга с диаметром {} равна {}".format(d, s))
-                    print()
+                    print(line("-", 100))
                     menu_1 = (input("""
                     1 - Продолжить;
                     99- Меню окружности;
@@ -152,9 +160,9 @@ while True:
                     print()
                     length = float(input("""Введите длину окружности: """))
                     s = length ** 2 / 4 * math.pi
-                    print()
+                    print(line("-", 100))
                     print("Площадь круга с длиной окружности {} равна {}".format(length, s))
-                    print()
+                    print(line("-", 100))
                     menu_1 = (input("""
     1 - Продолжить;
     99- Меню окружности;
@@ -191,8 +199,9 @@ while True:
                     s_1 = (p - a) * (p - b) * (p - c)
                     s_2 = p * s_1
                     s = s_2 ** 0.5
+                    print(line("-", 100))
                     print("Площадь треугольника со сторонами {}, {} и {} равна {}".format(a, b, c, s))
-                    print()
+                    print(line("-", 100))
                     menu_1 = (input("""
                     1 - Продолжить; 
                     99- Меню треугольника;
@@ -216,8 +225,9 @@ while True:
                     angle = angle / 180
                     x = (math.sin(angle))
                     s = a * b * x / 2
+                    print(line("-", 100))
                     print("Площадь треугольника со сторонами {}, {}, и углом {} равна {}".format(a, b, s_in, s))
-                    print()
+                    print(line("-", 100))
                     menu_1 = (input("""
                     1 - Продолжить; 
                     99-Меню треугольника;
@@ -237,8 +247,9 @@ while True:
                     a = float(input("""Введите длину стороны: """))
                     h = float(input("""Введите длину высоты: """))
                     s = a * h / 2
-                    print()
+                    print(line("-", 100))
                     print("Площадь треугольника со стороной {} и высотой {} равна {}".format(a, h, s))
+                    print(line("-", 100))
                     menu_1 = (input("""
                     1 - Продолжить;
                     99- Меню треугольника;
@@ -273,7 +284,9 @@ while True:
                     b = float(input("""Введите длину второго основания: """))
                     h = float(input("""Введите высоту: """))
                     s = ((a + b) / 2) * h
+                    print(line("-", 100))
                     print("Площадь трапеции с основаниями {}, {} и высотой {} равна {}".format(a, b, h, s))
+                    print(line("-", 100))
                     menu_1 = (input("""
                 1 - Продолжить;
                 99- Меню трапеции;
@@ -292,7 +305,9 @@ while True:
                     m = float(input("""Введите среднюю линию: """))
                     h = float(input("""Введите высоту: """))
                     s = m * h
+                    print(line("-", 100))
                     print("Площадь трапеции с высотой {} и средней линией {} равна {}".format(h, m, s))
+                    print(line("-", 100))
                     menu_1 = (input("""
                 1 - Продолжить;
                 99- Меню трапеции
@@ -315,7 +330,9 @@ while True:
                     angle = angle / 180
                     x = (math.sin(angle))
                     s = d1 * d2 * x / 2
+                    print(line("-", 100))
                     print("Площадь трапеции с диагоналями {}, {} и углом {} равна {}".format(d1, d2, s_in, s))
+                    print(line("-", 100))
                     menu_1 = (input("""
                 1 - Продолжить;
                 99- Меню трапеции;
@@ -346,7 +363,9 @@ while True:
                     a = float(input("""Введите большую полуось: """))
                     b = float(input("""Введите малую полуось: """))
                     s = math.pi * a * b
+                    print(line("-", 100))
                     print("Площадь эллипса с полуосями {} и {} равна {}".format(a, b, s))
+                    print(line("-", 100))
                     menu_1 = (input("""
                     1 - Продолжить;
                     99- Меню эллипса;
@@ -379,7 +398,9 @@ while True:
                     a = float(input("""Введите длину основания: """))
                     h = float(input("""Введите высоту: """))
                     s = a * h
+                    print(line("-", 100))
                     print("Площадь ромба с основанием {} и высотой {} равна {}".format(a, h, s))
+                    print(line("-", 100))
                     menu_1 = (input("""
                     1 - Продолжить;
                     99- Меню ромба;
@@ -398,7 +419,9 @@ while True:
                     d_1 = float(input("""Введите длину первой диагонали: """))
                     d_2 = float(input("""Введите длину второй диагонали: """))
                     s = d_1 * d_2 / 2
+                    print(line("-", 100))
                     print("Площадь ромба с диагоналми {} и {} равна {}".format(d_1, d_2, s))
+                    print(line("-", 100))
                     menu_1 = (input("""
                     1 - Продолжить;
                     99- Меню ромба;
@@ -418,7 +441,9 @@ while True:
                     angle = angle / 180
                     x = (math.sin(angle))
                     s = a ** 2 * x
+                    print(line("-", 100))
                     print("Площадь ромба со стороной {} и углом {} равна {}".format(a, s_in, s))
+                    print(line("-", 100))
                     menu_1 = (input("""
                     1 - Продолжить;
                     99- Меню ромба;
@@ -455,7 +480,9 @@ while True:
                     angle = angle / 180
                     x = (math.sin(angle))
                     s = a * b * x
+                    print(line("-", 100))
                     print("Площадь параллелограмма со сторонами {}, {} и углом {} равна {}".format(a, b, s_in, s))
+                    print(line("-", 100))
                     par = (input("""
                         1 - Продолжить;
                         99- Меню параллелограмма;
@@ -474,7 +501,9 @@ while True:
                     a = float(input("""Введите длину стороны: """))
                     h = float(input("""Введите высоту: """))
                     s = a * h
+                    print(line("-", 100))
                     print("Площадь параллелограмма со стороной {} и высотой {} равна {}".format(a, h, s))
+                    print(line("-", 100))
                     par = (input("""
                         1 - Продолжить;
                         99- Меню параллелограмма;
@@ -496,7 +525,9 @@ while True:
                     angle = angle / 180
                     x = (math.sin(angle))
                     s = d1 * d2 * x / 2
+                    print(line("-", 100))
                     print("Площадь параллелограмма с диагоналями {}, {} и углом {} равна {}".format(d1, d2, s_in, s))
+                    print(line("-", 100))
                     par = (input("""
                     1 - Продолжить;
                     99- Меню параллелограмма;
@@ -527,7 +558,9 @@ while True:
                 while True:
                     a = float(input("""Введите длину стороны: """))
                     s = a ** 2
+                    print(line("-", 100))
                     print("Площадь квадрата со стороной {} равна {}".format(a, s))
+                    print(line("-", 100))
                     square = (input("""
                 1 - Продолжить;
                 99- Меню квадрата;
@@ -545,7 +578,9 @@ while True:
                 while True:
                     d = float(input("""Введите диагональ: """))
                     s = d ** 2 / 2
+                    print(line("-", 100))
                     print("Площадь квадрата с диагональю {} равна {}".format(d, s))
+                    print(line("-", 100))
                     square = (input("""
                 1 - Продолжить;
                 99- Меню квадрата;
@@ -582,7 +617,9 @@ while True:
                     angle = angle / 180
                     x = (math.sin(angle))
                     s = d1 * d2 * x / 2
+                    print(line("-", 100))
                     print("Площадь четыреугольника с диагоналями {}, {} и углом {} равна {}".format(d1, d2, s_in, s))
+                    print(line("-", 100))
                     quadra = (input("""
                     1 - Продолжить;
                     99- В меню четырехугольника;
@@ -612,14 +649,18 @@ while True:
                     x2 = (math.sin(angle2))
                     p = (a + b + c + d) / 2
                     o = (x1 + x2) / 2
+                    print(line("-", 100))
                     print("""В разработке""")
+                    print(line("-", 100))
                     break
             elif menu_1 == "3":
                 while True:
                     p = float(input("""Введите полупериметр: """))
                     r = float(input("""Введите радиус: """))
                     s = p * r
+                    print(line("-", 100))
                     print("Площадь четырехугольника с полупериметром {} и окружностью {} равна {}".format(p, r, s))
+                    print(line("-", 100))
                     quadra = (input("""
                     1 - Продолжить;
                     99- В меню четырехугольника;
