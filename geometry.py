@@ -1,3 +1,8 @@
+import math
+import time
+
+result = []
+
 print("""
 ████──███──████──█───██─███──███──████──██─██
 █─────█────█──█──██─███─█─────█───█──█───███
@@ -6,6 +11,38 @@ print("""
 ████──███──████──█───██─███───█───█─█─────█
 ──────────────────────────────────────────█
 """)
+print("https://github.com/Sandrototo/simple_geometry")
+time.sleep(1)
+
+
+def func():
+    while True:
+        result.clear()
+        menu_1 = (input("""
+            1 - Продолжить;
+            99- Меню;
+            0 - Выход;
+
+            Введите значение: """))
+        if menu_1 == "0":
+            quit_1()
+        elif menu_1 == "1":
+            result.append(menu_1)
+            break
+        elif menu_1 == "99":
+            result.append(menu_1)
+            break
+
+
+def quit_1():
+    quit(""" 
+    ██████████████████████████████████████████
+    █────██────██────██────███────███─█─██───█
+    █─█████─██─██─██─██─██──██─██──██─█─██─███
+    █─█──██─██─██─██─██─██──██────███─█─██───█
+    █─██─██─██─██─██─██─██──██─██──██─█─██─███
+    █────██────██────██────███────███───██───█
+    ██████████████████████████████████████████""")
 
 
 def line(sep, sep_len):
@@ -15,7 +52,7 @@ def line(sep, sep_len):
 while True:
     print()
     menu = (input("""Выберите Действие:
-     
+
     1 - Вычисление площади прямоугольника; 
     2 - Вычисление площади круга; 
     3 - Вычисление площади треугольника;
@@ -26,13 +63,12 @@ while True:
     8 - Вычисление площади квадрата;
     9 - Вычисление площади четырехугольника;
     0 - Выход;
-     
+
     Введите значение: """))
     print()
-    import math
 
     if menu == "0":
-        quit("Пока")
+        quit_1()
 
     elif menu == "1":
         while True:
@@ -41,10 +77,10 @@ while True:
             2 - По диагонали и углу;
             99- Выход в главное меню;
             0 - Выход; 
-            
+
             Введите Значение: """))
             if square == "0":
-                quit("Пока")
+                quit_1()
             elif square == "99":
                 break
             elif square == "1":
@@ -55,21 +91,11 @@ while True:
                     print(line("-", 100))
                     print(f"Площадь прямоугольника со сторонами {a} и {b} равна {s}")
                     print(line("-", 100))
-                    menu_1 = (input("""Выберите действие:
-             
-    1 - Продолжить; 
-    99- Главное меню; 
-    0 - Выход;
-
-    Введите значение: """))
-                    if menu_1 == "1":
-                        print()
-                    elif menu_1 == "0":
-                        quit("Пока")
-                    elif menu_1 == "1":
-                        print()
-                    else:
+                    func()
+                    if result[0] == "99":
                         break
+                else:
+                    break
 
             elif square == "2":
                 while True:
@@ -82,18 +108,11 @@ while True:
                     print(line("-", 100))
                     print("Площадь прямоугольника с диагональю {} и углом {} равна {}".format(d, s_in, s))
                     print(line("-", 100))
-                    menu_1 = (input("""Выберите действие: 
-                1 - Продолжить;
-                99 - Меню прямоугольника;
-                0 - Выход;
-                
-                Введите значение: """))
-                    if menu_1 == "0":
-                        quit("Пока")
-                    elif menu_1 == "1":
-                        print()
-                    else:
+                    func()
+                    if result[0] == "99":
                         break
+                else:
+                    break
 
     elif menu == "2":
         while True:
@@ -103,10 +122,10 @@ while True:
             3 - По длине окружности;
             99- Выход в главное меню;
             0 - Выход;
-            
+
             Введите значение: """))
             if circle == "0":
-                quit("Пока")
+                quit_1()
             elif circle == "99":
                 break
                 print()
@@ -120,19 +139,11 @@ while True:
                     print("""
 Площадь круга с радиусом {} равна {}""".format(r, s))
                     print(line("-", 100))
-                    menu_1 = (input("""
-    1 - Продолжить; 
-    99- Меню окружности;
-    0 - Выход;
-    
-    Введите значение: """))
-                    print()
-                    if menu_1 == "0":
-                        quit("Пока")
-                    elif menu_1 == "1":
-                        print()
-                    else:
+                    func()
+                    if result[0] == "99":
                         break
+                else:
+                    break
 
             elif circle == "2":
                 while True:
@@ -142,18 +153,11 @@ while True:
                     print(line("-", 100))
                     print("Площадь круга с диаметром {} равна {}".format(d, s))
                     print(line("-", 100))
-                    menu_1 = (input("""
-                    1 - Продолжить;
-                    99- Меню окружности;
-                    0 - Выход;
-                    
-                    Введите значение: """))
-                    if menu_1 == "0":
-                        quit("Пока")
-                    elif menu_1 == "1":
-                        print()
-                    else:
+                    func()
+                    if result[0] == "99":
                         break
+                else:
+                    break
 
             elif circle == "3":
                 while True:
@@ -163,18 +167,11 @@ while True:
                     print(line("-", 100))
                     print("Площадь круга с длиной окружности {} равна {}".format(length, s))
                     print(line("-", 100))
-                    menu_1 = (input("""
-    1 - Продолжить;
-    99- Меню окружности;
-    0 - Выход;
-    
-    Введите значение: """))
-                    if menu_1 == "0":
-                        quit("Пока")
-                    elif menu_1 == "1":
-                        print()
-                    else:
+                    func()
+                    if result[0] == "99":
                         break
+                else:
+                    break
 
     elif menu == "3":
         while True:
@@ -184,10 +181,10 @@ while True:
          3 - По стороне и опущенной на нее высоте;
          99- Выход в главное меню;
          0 - Выход;
-         
+
           Введите значение: """))
             if triangle == "0":
-                quit("Пока")
+                quit_1()
             elif triangle == "99":
                 break
             elif triangle == "1":
@@ -202,19 +199,11 @@ while True:
                     print(line("-", 100))
                     print("Площадь треугольника со сторонами {}, {} и {} равна {}".format(a, b, c, s))
                     print(line("-", 100))
-                    menu_1 = (input("""
-                    1 - Продолжить; 
-                    99- Меню треугольника;
-                    0 - Выход;
-                    
-                    Введите значение: """))
-                    print()
-                    if menu_1 == "0":
-                        quit("Пока")
-                    elif menu_1 == "1":
-                        print()
-                    else:
+                    func()
+                    if result[0] == "99":
                         break
+                else:
+                    break
 
             elif triangle == "2":
                 while True:
@@ -228,19 +217,11 @@ while True:
                     print(line("-", 100))
                     print("Площадь треугольника со сторонами {}, {}, и углом {} равна {}".format(a, b, s_in, s))
                     print(line("-", 100))
-                    menu_1 = (input("""
-                    1 - Продолжить; 
-                    99-Меню треугольника;
-                    0-Выход;
-                    
-                    Введите значение: """))
-                    print()
-                    if menu_1 == "0":
-                        quit("Пока")
-                    elif menu_1 == "1":
-                        print()
-                    else:
+                    func()
+                    if result[0] == "99":
                         break
+                else:
+                    break
 
             elif triangle == "3":
                 while True:
@@ -250,19 +231,11 @@ while True:
                     print(line("-", 100))
                     print("Площадь треугольника со стороной {} и высотой {} равна {}".format(a, h, s))
                     print(line("-", 100))
-                    menu_1 = (input("""
-                    1 - Продолжить;
-                    99- Меню треугольника;
-                    0 - Выход;
-                    
-                    Введите значение: """))
-                    print()
-                    if menu_1 == "0":
-                        quit("Пока")
-                    elif menu_1 == "1":
-                        print()
-                    else:
+                    func()
+                    if result[0] == "99":
                         break
+                else:
+                    break
 
     elif menu == "4":
         while True:
@@ -272,10 +245,10 @@ while True:
             3 - По диагоналям и углу между ними;
             99- В главное меню;
             0 - Выход;
-            
+
             Введите значение: """))
             if trapeze == "0":
-                quit("Пока")
+                quit_1()
             elif trapeze == "99":
                 break
             elif trapeze == "1":
@@ -287,18 +260,11 @@ while True:
                     print(line("-", 100))
                     print("Площадь трапеции с основаниями {}, {} и высотой {} равна {}".format(a, b, h, s))
                     print(line("-", 100))
-                    menu_1 = (input("""
-                1 - Продолжить;
-                99- Меню трапеции;
-                0 - Выход;
-                
-                Введите значение: """))
-                    if menu_1 == "0":
-                        quit("Пока")
-                    elif menu_1 == "1":
-                        print()
-                    else:
+                    func()
+                    if result[0] == "99":
                         break
+                else:
+                    break
 
             elif trapeze == "2":
                 while True:
@@ -308,18 +274,11 @@ while True:
                     print(line("-", 100))
                     print("Площадь трапеции с высотой {} и средней линией {} равна {}".format(h, m, s))
                     print(line("-", 100))
-                    menu_1 = (input("""
-                1 - Продолжить;
-                99- Меню трапеции
-                0 - Выход;
-                
-                Введите значение: """))
-                    if menu_1 == "0":
-                        quit("Пока")
-                    elif menu_1 == "1":
-                        print()
-                    else:
+                    func()
+                    if result[0] == "99":
                         break
+                else:
+                    break
 
             elif trapeze == "3":
                 while True:
@@ -333,18 +292,11 @@ while True:
                     print(line("-", 100))
                     print("Площадь трапеции с диагоналями {}, {} и углом {} равна {}".format(d1, d2, s_in, s))
                     print(line("-", 100))
-                    menu_1 = (input("""
-                1 - Продолжить;
-                99- Меню трапеции;
-                0 - Выход;
-                
-                Введите значение: """))
-                    if menu_1 == "0":
-                        quit("Пока")
-                    elif menu_1 == "1":
-                        print()
-                    else:
+                    func()
+                    if result[0] == "99":
                         break
+                else:
+                    break
 
     elif menu == "5":
         while True:
@@ -352,10 +304,10 @@ while True:
             1 - По длине полуосей;
             99- В главное меню; 
             0 - Выход;
-            
+
             Введите значение: """))
             if circle == "0":
-                quit("Пока")
+                quit_1()
             elif circle == "99":
                 break
             elif circle == "1":
@@ -366,18 +318,11 @@ while True:
                     print(line("-", 100))
                     print("Площадь эллипса с полуосями {} и {} равна {}".format(a, b, s))
                     print(line("-", 100))
-                    menu_1 = (input("""
-                    1 - Продолжить;
-                    99- Меню эллипса;
-                    0 - Выход;
-                    
-                    Введите значение: """))
-                    if menu_1 == "0":
-                        quit("Пока")
-                    elif menu_1 == "1":
-                        print()
-                    else:
+                    func()
+                    if result[0] == "99":
                         break
+                else:
+                    break
 
     elif menu == "6":
         while True:
@@ -387,10 +332,10 @@ while True:
             3 - По стороне и углу;
             99- В главное меню; 
             0 - Выход;
-            
+
             Введите значение: """))
             if rhombus == "0":
-                quit("Пока")
+                quit_1()
             elif rhombus == "99":
                 break
             elif rhombus == "1":
@@ -401,18 +346,11 @@ while True:
                     print(line("-", 100))
                     print("Площадь ромба с основанием {} и высотой {} равна {}".format(a, h, s))
                     print(line("-", 100))
-                    menu_1 = (input("""
-                    1 - Продолжить;
-                    99- Меню ромба;
-                    0 - Выход;
-                    
-                    Введите значение: """))
-                    if menu_1 == "0":
-                        quit("Пока")
-                    elif menu_1 == "1":
-                        print()
-                    else:
+                    func()
+                    if result[0] == "99":
                         break
+                else:
+                    break
 
             elif rhombus == "2":
                 while True:
@@ -422,16 +360,11 @@ while True:
                     print(line("-", 100))
                     print("Площадь ромба с диагоналми {} и {} равна {}".format(d_1, d_2, s))
                     print(line("-", 100))
-                    menu_1 = (input("""
-                    1 - Продолжить;
-                    99- Меню ромба;
-                    0 - Выход: """))
-                    if menu_1 == "0":
-                        quit("Пока")
-                    elif menu_1 == "1":
-                        print()
-                    else:
+                    func()
+                    if result[0] == "99":
                         break
+                else:
+                    break
 
             if rhombus == "3":
                 while True:
@@ -444,34 +377,27 @@ while True:
                     print(line("-", 100))
                     print("Площадь ромба со стороной {} и углом {} равна {}".format(a, s_in, s))
                     print(line("-", 100))
-                    menu_1 = (input("""
-                    1 - Продолжить;
-                    99- Меню ромба;
-                    0 - Выход;
-                    
-                    Введите значение: """))
-                    if menu_1 == "0":
-                        quit("Пока")
-                    elif menu_1 == "1":
-                        print()
-                    else:
+                    func()
+                    if result[0] == "99":
                         break
+                else:
+                    break
 
     elif menu == "7":
         while True:
-            menu_1 = (input("""Выберите формулу расчета:
+            par = (input("""Выберите формулу расчета:
             1 - По двум сторонам и углу между ними;
             2 - По стороне и высоте;
             3 - По диагоналям и углу;
             99- Главное меню;
             0 - Выход;
-            
+
             Введите значение: """))
-            if menu_1 == "0":
-                quit("Пока")
-            elif menu_1 == "99":
+            if par == "0":
+                quit_1()
+            elif par == "99":
                 break
-            elif menu_1 == "1":
+            elif par == "1":
                 while True:
                     a = float(input("Введите сторону: "))
                     b = float(input("Введите сторону: "))
@@ -483,20 +409,13 @@ while True:
                     print(line("-", 100))
                     print("Площадь параллелограмма со сторонами {}, {} и углом {} равна {}".format(a, b, s_in, s))
                     print(line("-", 100))
-                    par = (input("""
-                        1 - Продолжить;
-                        99- Меню параллелограмма;
-                        0 - Выход;
-                        
-                        Введите значение: """))
-                    if par == "0":
-                        quit("Пока")
-                    elif par == "1":
-                        print()
-                    else:
+                    func()
+                    if result[0] == "99":
                         break
+                else:
+                    break
 
-            elif menu_1 == "2":
+            elif par == "2":
                 while True:
                     a = float(input("""Введите длину стороны: """))
                     h = float(input("""Введите высоту: """))
@@ -504,19 +423,13 @@ while True:
                     print(line("-", 100))
                     print("Площадь параллелограмма со стороной {} и высотой {} равна {}".format(a, h, s))
                     print(line("-", 100))
-                    par = (input("""
-                        1 - Продолжить;
-                        99- Меню параллелограмма;
-                        0 - Выход;
-                        
-                        Введите значение: """))
-                    if par == "0":
-                        quit("Пока")
-                    elif par == "1":
-                        print()
-                    else:
+                    func()
+                    if result[0] == "99":
                         break
-            elif menu_1 == "3":
+                else:
+                    break
+
+            elif par == "3":
                 while True:
                     d1 = float(input("""Введите диагональ: """))
                     d2 = float(input("""Введите диагональ: """))
@@ -528,87 +441,66 @@ while True:
                     print(line("-", 100))
                     print("Площадь параллелограмма с диагоналями {}, {} и углом {} равна {}".format(d1, d2, s_in, s))
                     print(line("-", 100))
-                    par = (input("""
-                    1 - Продолжить;
-                    99- Меню параллелограмма;
-                    0 - Выход;
-                    
-                    Введите значение: """))
-                    if par == "0":
-                        quit("Пока")
-                    elif par == "1":
-                        print()
-                    else:
+                    func()
+                    if result[0] == "99":
                         break
+                else:
+                    break
 
     elif menu == "8":
         while True:
-            menu_1 = (input("""Выберите формулу расчета:
+            square = (input("""Выберите формулу расчета:
              1 - По стороне;
              2 - По диагонали;
              99- Главное меню;
              0 - Выход;
-             
+
              Введите значение: """))
-            if menu_1 == "0":
-                quit("Пока")
-            elif menu_1 == "99":
+            if square == "0":
+                quit_1()
+            elif square == "99":
                 break
-            elif menu_1 == "1":
+            elif square == "1":
                 while True:
                     a = float(input("""Введите длину стороны: """))
                     s = a ** 2
                     print(line("-", 100))
                     print("Площадь квадрата со стороной {} равна {}".format(a, s))
                     print(line("-", 100))
-                    square = (input("""
-                1 - Продолжить;
-                99- Меню квадрата;
-                0 - Выход;
-                
-                Введите значение: """))
-                    if square == "0":
-                        quit("Пока")
-                    elif square == "1":
-                        print()
-                    else:
+                    func()
+                    if result[0] == "99":
                         break
+                else:
+                    break
 
-            elif menu_1 == "2":
+            elif square == "2":
                 while True:
                     d = float(input("""Введите диагональ: """))
                     s = d ** 2 / 2
                     print(line("-", 100))
                     print("Площадь квадрата с диагональю {} равна {}".format(d, s))
                     print(line("-", 100))
-                    square = (input("""
-                1 - Продолжить;
-                99- Меню квадрата;
-                0 - Выход;
-                
-                Введите значение: """))
-                    if square == "0":
-                        quit("Пока")
-                    elif square == "1":
-                        print()
-                    else:
+                    func()
+                    if result[0] == "99":
                         break
+                else:
+                    break
 
     elif menu == "9":
         while True:
-            menu_1 = (input("""Введите формулу расчета:
+            rectangle = (input("""Введите формулу расчета:
             1 - По длине диагоналей и углу между ними;
             2 - По длине сторон и два противоположных угла (В разработке);
             3 - По полупериметру и радиусу вписанной окружности;
             99- Главное меню;
             0 - Выход;
-            
+
             Введите значение: """))
-            if menu_1 == "0":
-                quit("Пока")
-            elif menu_1 == "99":
+            if rectangle == "0":
+                quit_1()
+            elif rectangle == "99":
                 break
-            elif menu_1 == "1":
+            elif rectangle == "1":
                 while True:
                     d1 = float(input("""Введите диагональ: """))
                     d2 = float(input("""Введите диагональ: """))
@@ -620,20 +512,13 @@ while True:
                     print(line("-", 100))
                     print("Площадь четыреугольника с диагоналями {}, {} и углом {} равна {}".format(d1, d2, s_in, s))
                     print(line("-", 100))
-                    quadra = (input("""
-                    1 - Продолжить;
-                    99- В меню четырехугольника;
-                    0 - Выход;
-                    
-                    Введите значение: """))
-                    if quadra == "0":
-                        quit("Пока")
-                    elif quadra == "1":
-                        print()
-                    else:
+                    func()
+                    if result[0] == "99":
                         break
+                else:
+                    break
 
-            elif menu_1 == "2":
+            elif rectangle == "2":
                 while True:
                     a = float(input("""Введите длину стороны: """))
                     b = float(input("""Введите длину стороны: """))
@@ -653,7 +538,7 @@ while True:
                     print("""В разработке""")
                     print(line("-", 100))
                     break
-            elif menu_1 == "3":
+            elif rectangle == "3":
                 while True:
                     p = float(input("""Введите полупериметр: """))
                     r = float(input("""Введите радиус: """))
@@ -661,15 +546,8 @@ while True:
                     print(line("-", 100))
                     print("Площадь четырехугольника с полупериметром {} и окружностью {} равна {}".format(p, r, s))
                     print(line("-", 100))
-                    quadra = (input("""
-                    1 - Продолжить;
-                    99- В меню четырехугольника;
-                    0 - Выход;
-                    
-                    Введите значение: """))
-                    if quadra == "0":
-                        quit("Пока")
-                    elif quadra == "1":
-                        print()
-                    else:
+                    func()
+                    if result[0] == "99":
                         break
+                else:
+                    break
