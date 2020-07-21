@@ -1,4 +1,4 @@
-result = []
+esult = []
 
 
 def line(sep, sep_len):
@@ -12,7 +12,7 @@ def rus_func():
                 1 - Продолжить;
                 99- Меню;
                 0 - Выход;
-    
+
                 Введите значение: """))
         if menu_1 == "0":
             quit_1()
@@ -146,14 +146,16 @@ def rus_square_2():
 
 
 def rus_rectangle():
-    rectangle = ("""Введите формулу расчета:
-                1 - По длине диагоналей и углу между ними;
-                2 - По длине сторон и два противоположных угла (В разработке);
-                3 - По полупериметру и радиусу вписанной окружности;
-                99- Главное меню;
-                0 - Выход;
+    rectangle = ("""
+        Введите формулу расчета:
+        1 - По длине диагоналей и углу между ними;
+        2 - По длине сторон и два противоположных угла;
+        3 - По полупериметру и радиусу вписанной окружности;
+        4 - По длинам четырех сторон и диагоналям;
+        99- Главное меню;
+        0 - Выход;
 
-                Введите значение: """)
+        Введите значение: """)
     return rectangle
 
 
@@ -286,12 +288,14 @@ def en_square_2():
 
 
 def en_rectangle():
-    rectangle = ("""Enter the calculation formula:
-                1 - Along the length of the diagonals and the angle between them;
-                2 - Along the length of the sides and two opposite corners (In development);
-                3 - Half-perimeter and inscribed circle radius;
-                99- Main menu;
-                0 - Exit;
+    rectangle = ("""
+        Enter the calculation formula:
+        1 - Along the length of the diagonals and the angle between them;
+        2 - Along the length of the sides and two opposite corners;
+        3 - Half-perimeter and inscribed circle radius;
+        4 - By the lengths of the four sides and diagonals;
+        99- Main menu;
+        0 - Exit;
 
-                Enter value: """)
+        Enter value: """)
     return rectangle

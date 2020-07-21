@@ -1,7 +1,6 @@
 import math
 import func_tion
 
-
 while True:
     print()
     menu = input(func_tion.rus_menu())
@@ -62,9 +61,10 @@ while True:
         Введите радиус: """))
                     print()
                     s = math.pi * r ** 2
+                    l1 = 2 * math.pi * r
                     print(func_tion.line("-", 100))
-                    print("""
-Площадь круга с радиусом {} равна {}""".format(r, s))
+                    print(f"""
+Площадь круга с радиусом {r} равна {s} а длина окружности рвна {l1}""")
                     print(func_tion.line("-", 100))
                     func_tion.rus_func()
                     if func_tion.result[0] == "99":
@@ -405,20 +405,27 @@ while True:
                     b = float(input("""Введите длину стороны: """))
                     c = float(input("""Введите длину стороны: """))
                     d = float(input("""Введите длину стороны: """))
-                    s_in1 = float(input("""Введите угол: """))
-                    s_in2 = float(input("""Введите угол: """))
-                    angle1 = s_in1 * math.pi
-                    angle1 = angle1 / 180
-                    x1 = (math.sin(angle1))
-                    angle2 = s_in2 * math.pi
-                    angle2 = angle2 / 180
-                    x2 = (math.sin(angle2))
-                    p = (a + b + c + d) / 2
-                    o = (x1 + x2) / 2
-                    print(line("-", 100))
-                    print("""В разработке""")
-                    print(line("-", 100))
+                    angle_1 = float(input("""Введите угол: """))
+                    angle_2 = float(input("""Введите угол: """))
+                    rad_angle_1 = math.radians(angle_1)
+                    rad_angle_2 = math.radians(angle_2)
+                    cos_angle = math.cos((rad_angle_1 + rad_angle_2) / 2)
+                    res_cos = math.pow(cos_angle, 2)
+                    res1 = res_cos * a * b * c * d
+                    res2 = (a + b + c + d) / 2
+                    res3 = (res2 - a) * (res2 - b) * (res2 - c) * (res2 - d)
+                    res4 = res3 - res1
+                    result = math.sqrt(res4)
+                    print(func_tion.line("-", 100))
+                    print(f"""
+Площадь четырехугольника со сторонами {a}, {b}, {c}, {d} и углами {angle_1} и {angle_2} равна {result}""")
+                    print(func_tion.line("-", 100))
+                    func_tion.rus_func()
+                    if func_tion.result[0] == "99":
+                        break
+                else:
                     break
+
             elif rectangle == "3":
                 while True:
                     p = float(input("""Введите полупериметр: """))
@@ -426,6 +433,29 @@ while True:
                     s = p * r
                     print(func_tion.line("-", 100))
                     print("""Площадь четырехугольника с полупериметром {} и окружностью {} равна {}""".format(p, r, s))
+                    print(func_tion.line("-", 100))
+                    func_tion.rus_func()
+                    if func_tion.result[0] == "99":
+                        break
+                else:
+                    break
+
+            elif rectangle == "4":
+                while True:
+                    a = float(input("Введите сторону(a): "))
+                    b = float(input("Введите сторону(b): "))
+                    c = float(input("Введите сторону(c): "))
+                    d = float(input("Введите сторону(d): "))
+                    dia_1 = float(input("Введите 1 диагональ: "))
+                    dia_2 = float(input("Введите 2 диагональ: "))
+                    s = (a + b + c + d) / 2
+                    rres = (a * c + b * d + dia_1 * dia_2) * (a * c + b * d - dia_1 * dia_2) * 0.25
+                    lres = (s - a) * (s - b) * (s - c) * (s - d)
+                    res = lres - rres
+                    result = math.sqrt(res)
+                    print(func_tion.line("-", 100))
+                    print(f"""
+Площадь четырехугольника с сторонами {a}, {b}, {c}, {d} и диагоналями {dia_1} и {dia_2} равна {result}""")
                     print(func_tion.line("-", 100))
                     func_tion.rus_func()
                     if func_tion.result[0] == "99":
