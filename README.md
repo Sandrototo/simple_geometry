@@ -1,2 +1,2 @@
 simple_geometry
-use "python run_geometry.py"
+use "python3 run_geometry.py"
