@@ -1,4 +1,4 @@
-esult = []
+result = []
 
 
 def line(sep, sep_len):
